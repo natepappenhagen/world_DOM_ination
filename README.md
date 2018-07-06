@@ -13,17 +13,6 @@ and or battle for control of the whole map.
 Battling has different outcomes based on chance! When you battle for a square you could win/lose or win and also steal a square from player. So when you battle the board could change pretty dramaticaly based on if you steal some squares.
 
 ```
-
-                                     *battle*
-
-When two armies meet they can battle for the ownership of a territory and it's precious +1 army on refresh.
-
-If a player has 1 army on a territory then the player can neither attack or defend.
-This player will always lose if attacked.
-
-to keep it interesting there will be a random battle selector to determine if the armies win/lose or draw.
-
-
                                   *Battle Logic*
 ```
 4 outcoems:
