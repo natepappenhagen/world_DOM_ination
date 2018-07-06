@@ -117,16 +117,16 @@ function battle() {
 
 // if random # is greater than 3 and less than 6 then player2 wins
   if (randomWinner >= 1 && randomWinner <= 4) {
-   $(this).removeClass("player1 player1 can-move can-attack player2 player2");
+   $(this).removeClass("player1 player1 can-move can-attack player2 player2").addClass("player2 p2winner");
     //$(this).css("background-color","yellow")
-   $(this).addClass("player2 p2winner")
+   //$(this).addClass("player2 p2winner")
   }
   // if random # is less than 3 and greater than 1 then player1 wins
    if (randomWinner >= 5 && randomWinner <= 8) {
 
-   $(this).removeClass("player1 player1 can-move can-attack player2 player2");
+   $(this).removeClass("player1 player1 can-move can-attack player2 player2").addClass("player1 p1winner");
     //$(this).css("background-color","orange")
-   $(this).addClass("player1 p1winner")
+   //$(this).addClass("player1 p1winner")
 
   }
   //extra p1 square died in battle
