@@ -119,27 +119,26 @@ function battle() {
   if (randomWinner >= 1 && randomWinner <= 4) {
    $(this).removeClass("player1 player1 can-move can-attack player2 player2");
     //$(this).css("background-color","yellow")
-   $(this).addClass('player2')
-   $(this).addClass('p2winner')
+   $(this).addClass("player2 p2winner")
   }
   // if random # is less than 3 and greater than 1 then player1 wins
    if (randomWinner >= 5 && randomWinner <= 8) {
 
    $(this).removeClass("player1 player1 can-move can-attack player2 player2");
     //$(this).css("background-color","orange")
-   $(this).addClass('player1')
-   $(this).addClass('p1winner')
+   $(this).addClass("player1 p1winner")
+
   }
   //extra p1 square died in battle
   if (randomWinner == 9) {
   		let randomSingleP1SqDeath = $(".player1").eq(randomP1Square).removeClass("player1 player1 can-move can-attack player2 player2");
-  			randomSingleP1SqDeath.addClass("player2")
+  			randomSingleP1SqDeath.addClass("player2 p2winner")
 		 console.log("the worst - p1 lost an extra square in battle to p2. :(")
   }
   // player loses 1 random square
   if (randomWinner == 10) {
   		let randomSingleP2SqDeath = $(".player2").eq(randomP2Square).removeClass("player1 player1 can-move can-attack player2 player2");
-  			randomSingleP2SqDeath.addClass("player1")
+  			randomSingleP2SqDeath.addClass("player1 p1winner")
 		 console.log("the worst - p2 lost an extra square in battle to p1. :(")
   }
 //   // player 2 loses a random square
