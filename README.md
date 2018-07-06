@@ -14,15 +14,15 @@ Battling has different outcomes based on chance! When you battle for a square yo
 
 ```
                                   *Battle Logic*
-```
+
 4 outcoems:
   1/4 chance of: player 1 losing the battle
   1/4  chance of: player 2 losing the battle
   1/10 chance of: player 1 losing an EXTRA random square :(
   1/10 chance of: player 2 losing an EXTRA random square :(
-```
 
-                                           *How to Win?*
+
+                                  *How to Win?*
 
 Control all the squares.. but becareful about battling too much because you may end up losing more of your squares
 than you bargained for.
