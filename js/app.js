@@ -197,8 +197,6 @@ const limitPlayerClicks = () => {
 ////// button listener
 $("#p1button").click(function(event) {
  game.clickCounter = 0;
-  updateScoresP1("player1")
- updateScoresP2("player2");
 
  //clears hexagon from other player
 
@@ -223,8 +221,6 @@ $("#p1button").click(function(event) {
 
 $("#p2button").click(function(event) {
  game.clickCounter = 0;
-  updateScoresP1("player1")
- updateScoresP2("player2");
 
  // clears hexagon from other player
  $('.hexagon').removeClass('p1winner')
