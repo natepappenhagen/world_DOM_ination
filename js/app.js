@@ -2,8 +2,8 @@ console.log('hello');
 
 // Make the map
 
-let rows = [0, 0, 0, 0, 0, 0, 0, ];
-let cols = [0, 0, 0, 0, 0, 0, 0, ];
+const rows = [0, 0, 0, 0, 0, 0, 0, ];
+const cols = [0, 0, 0, 0, 0, 0, 0, ];
 
 
 
@@ -17,16 +17,16 @@ for (let y = 0; y < rows.length; y++) {
 
 // sets up random first board
 
-let randomStart = () => {
- let divLengthX = $(".hexagon").length;
+const randomStart = () => {
+const divLengthX = $(".hexagon").length;
 
- let random = Math.floor(Math.random() * divLengthX);
- $(".hexagon").eq(random).addClass("player1");
+const random1 = Math.floor(Math.random() * divLengthX);
+$(".hexagon").eq(random1).addClass("player1");
 
- let divLengthY = $(".hexagon").length;
+const divLengthY = $(".hexagon").length;
 
- random = Math.floor(Math.random() * divLengthY);
- $(".hexagon").eq(random).addClass("player2");
+ const random2 = Math.floor(Math.random() * divLengthY);
+$(".hexagon").eq(random2).addClass("player2");
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -84,12 +84,12 @@ function showFairMoves(playerClass) {
 //update scores
 
 function updateScoresP1(playerClass) {
-	let playerScore = $(`.${playerClass}`).length
+	const playerScore = $(`.${playerClass}`).length
 
 	$('.p1Score').text(playerScore);
 	}
 function updateScoresP2(playerClass) {
-	let playerScore = $(`.${playerClass}`).length
+	const playerScore = $(`.${playerClass}`).length
 
 	$('.p2Score').text(playerScore);
 	}
@@ -108,38 +108,42 @@ function battle() {
 
   console.log('you attacked someone');
 
-  let randomWinner = Math.floor(Math.random() * 10) + 1
-  let lengthOfPlayer1 = $(".player1").length;
-  let lengthOfPlayer2 = $(".player2").length;
-  let randomP1Square = Math.floor(Math.random() * lengthOfPlayer1);
-  let randomP2Square = Math.floor(Math.random() * lengthOfPlayer2);
+  const randomWinner = Math.floor(Math.random() * 16) + 1
+  const lengthOfPlayer1 = $(".player1").length;
+  const lengthOfPlayer2 = $(".player2").length;
+  const randomP1Square = Math.floor(Math.random() * lengthOfPlayer1);
+  const randomP2Square = Math.floor(Math.random() * lengthOfPlayer2);
 
 
 // if random # is greater than 3 and less than 6 then player2 wins
-  if (randomWinner >= 1 && randomWinner <= 4) {
+
+  if (randomWinner >= 1 && randomWinner <= 7) {
    $(this).removeClass("player1 player1 can-move can-attack player2 player2").addClass("player2 p2winner");
     //$(this).css("background-color","yellow")
    //$(this).addClass("player2 p2winner")
+   return
   }
   // if random # is less than 3 and greater than 1 then player1 wins
-   if (randomWinner >= 5 && randomWinner <= 8) {
+   else if (randomWinner >= 8 && randomWinner <= 14) {
 
    $(this).removeClass("player1 player1 can-move can-attack player2 player2").addClass("player1 p1winner");
     //$(this).css("background-color","orange")
    //$(this).addClass("player1 p1winner")
-
+   return
   }
   //extra p1 square died in battle
-  if (randomWinner == 9) {
-  		let randomSingleP1SqDeath = $(".player1").eq(randomP1Square).removeClass("player1 player1 can-move can-attack player2 player2");
+  else if (randomWinner == 15) {
+  		const randomSingleP1SqDeath = $(".player1").eq(randomP1Square).removeClass("player1 player1 can-move can-attack player2 player2");
   			randomSingleP1SqDeath.addClass("player2 p2winner")
 		 console.log("the worst - p1 lost an extra square in battle to p2. :(")
+     return
   }
   // player loses 1 random square
-  if (randomWinner == 10) {
-  		let randomSingleP2SqDeath = $(".player2").eq(randomP2Square).removeClass("player1 player1 can-move can-attack player2 player2");
+  else if (randomWinner == 16) {
+  		const randomSingleP2SqDeath = $(".player2").eq(randomP2Square).removeClass("player1 player1 can-move can-attack player2 player2");
   			randomSingleP2SqDeath.addClass("player1 p1winner")
 		 console.log("the worst - p2 lost an extra square in battle to p1. :(")
+     return
   }
 //   // player 2 loses a random square
 //   if (randomWinner == 11) {
@@ -149,7 +153,7 @@ function battle() {
 // // 
 // if (randomWinner == 12){
 
-// 	  	let $player1Loser = $(".player").eq(randomP1Square).removeClass(".player1");
+// 	  	const $player1Loser = $(".player").eq(randomP1Square).removeClass(".player1");
 
 // 	  	$player1Loser.addClass("player2 takenP2")
 
@@ -158,7 +162,7 @@ function battle() {
 // // 
 // if (randomWinner == 13){
 
-// 	  	let $player2Loser = $(".player2").eq(randomP2Square).removeClass(".player2");
+// 	  	const $player2Loser = $(".player2").eq(randomP2Square).removeClass(".player2");
 
 // 	  	$player2Loser.addClass("player1 takenP1")
 
